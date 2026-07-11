@@ -33,6 +33,12 @@ It is designed for quick exploratory analysis and supports common relationships 
 - streamlit
 - pandas
 - google-genai
+- scipy
+- statsmodels
+- pingouin
+- dotenv
+- groq
+- Pathlib
 
 ## Installation
 
@@ -44,7 +50,7 @@ pip install streamlit pandas google-genai
 
 ## Configuration
 
-The app uses a Gemini API key for result explanations. Update the API key in the configuration file before running the app.
+The app uses Groq API key for result explanations. Update the API key in the configuration file before running the app.
 
 ## Run the App
 
