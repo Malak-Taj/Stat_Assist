@@ -45,7 +45,7 @@ It is designed for quick exploratory analysis and supports common relationships 
 Install the required dependencies:
 
 ```bash
-pip install streamlit pandas google-genai
+pip install streamlit pandas groq
 ```
 
 ## Configuration
@@ -71,9 +71,9 @@ Then open the local URL shown in the terminal.
 5. Click Analyze.
 
 The app will show:
-- the selected statistical test
-- the result summary
-- a simple explanation of the outcome in plain language
+- The selected statistical test
+- The result summary
+- A simple explanation of the outcome in plain language
 
 ## Notes
 
