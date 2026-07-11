@@ -80,12 +80,6 @@ if uploaded_file is not None:
 
         else:
 
-            st.subheader("Statistical Result")
-
-            st.json(result)
-
-            ##################################################
-
             explanation = explain_result(
 
                 user_question,

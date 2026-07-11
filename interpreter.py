@@ -82,6 +82,7 @@ def explain_result(
 
         messages=[
             {
+                
                 "role": "system",
                 "content": "You are an expert statistician and data analyst. Explain statistical test results in simple, educational language."
             },
@@ -91,7 +92,8 @@ def explain_result(
             }
         ],
 
-        temperature=0.3
+        temperature=0.2,
+        top_p=0.9
 
     )
 
