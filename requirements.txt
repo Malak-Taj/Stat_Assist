@@ -1,10 +1,11 @@
-- Python 3.9+
-- streamlit
-- pandas
-- google-genai
-- scipy
-- statsmodels
-- pingouin
-- dotenv
-- groq
-- pathlib
+streamlit
+pandas
+numpy
+scipy
+statsmodels
+pingouin
+plotly
+openpyxl
+python-dotenv
+groq
+google-genai
