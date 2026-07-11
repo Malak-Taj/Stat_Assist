@@ -6,3 +6,5 @@
 - statsmodels
 - pingouin
 - dotenv
+- groq
+- pathlib
