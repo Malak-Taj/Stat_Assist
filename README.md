@@ -25,7 +25,7 @@ It is designed for quick exploratory analysis and supports common relationships 
 - test_selector.py — Rule-based statistical test selection
 - preprocessing/ — Data cleaning and metadata extraction
 - tests/ — Statistical test implementations
-- interpreter.py — Gemini-based explanation layer
+- interpreter.py — Groq-based explanation layer
 
 ## Requirements
 
@@ -33,18 +33,24 @@ It is designed for quick exploratory analysis and supports common relationships 
 - streamlit
 - pandas
 - google-genai
+- scipy
+- statsmodels
+- pingouin
+- dotenv
+- groq
+- Pathlib
 
 ## Installation
 
 Install the required dependencies:
 
 ```bash
-pip install streamlit pandas google-genai
+pip install streamlit pandas groq
 ```
 
 ## Configuration
 
-The app uses a Gemini API key for result explanations. Update the API key in the configuration file before running the app.
+The app uses Groq API key for result explanations. Update the API key in the configuration file before running the app.
 
 ## Run the App
 
@@ -65,9 +71,9 @@ Then open the local URL shown in the terminal.
 5. Click Analyze.
 
 The app will show:
-- the selected statistical test
-- the result summary
-- a simple explanation of the outcome in plain language
+- The selected statistical test
+- The result summary
+- A simple explanation of the outcome in plain language
 
 ## Notes
 
