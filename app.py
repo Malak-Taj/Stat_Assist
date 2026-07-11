@@ -6,88 +6,90 @@ from preprocessing.metadata import extract_metadata
 from test_selector import choose_and_run_test
 from interpreter import explain_result
 
+try:
+        ##################################################
+    # Title
 
-##################################################
-# Title
-
-st.title("StatAssist")
-
-##################################################
-# Upload Dataset
-
-uploaded_file = st.file_uploader(
-    "Upload your dataset",
-    type=["csv" , "xlsx"]
-)
-
-if uploaded_file is not None:
+    st.title("StatAssist")
 
     ##################################################
-    # Read Dataset
+    # Upload Dataset
 
-    df = pd.read_csv(uploaded_file)
-
-    st.subheader("Dataset")
-
-    st.dataframe(df.head())
-
-    ##################################################
-    # Clean Data
-
-    df = clean_data(df)
-
-    ##################################################
-    # Extract Metadata
-
-    metadata = extract_metadata(df)
-
-    ##################################################
-    # User Question
-
-    user_question = st.text_input(
-        "What would you like to know?"
+    uploaded_file = st.file_uploader(
+        "Upload your dataset",
+        type=["csv" , "xlsx"]
     )
 
-    ##################################################
-    # Select Columns
+    if uploaded_file is not None:
 
-    selected_columns = st.multiselect(
-        "Select Two Variables",
-        options = df.columns,
-        max_selections = 2
-    )
+        ##################################################
+        # Read Dataset
 
-    ##################################################
-    # Run
+        df = pd.read_csv(uploaded_file)
 
-    if st.button("Analyze"):
+        st.subheader("Dataset")
 
-        result = choose_and_run_test(
+        st.dataframe(df.head())
 
-            df,
+        ##################################################
+        # Clean Data
 
-            selected_columns,
+        df = clean_data(df)
 
-            metadata
+        ##################################################
+        # Extract Metadata
 
+        metadata = extract_metadata(df)
+
+        ##################################################
+        # User Question
+
+        user_question = st.text_input(
+            "What would you like to know?"
         )
 
         ##################################################
+        # Select Columns
 
-        if "error" in result:
+        selected_columns = st.multiselect(
+            "Select Two Variables",
+            options = df.columns,
+            max_selections = 2
+        )
 
-            st.error(result["error"])
+        ##################################################
+        # Run
 
-        else:
+        if st.button("Analyze"):
 
-            explanation = explain_result(
+            result = choose_and_run_test(
 
-                user_question,
+                df,
 
-                result
+                selected_columns,
+
+                metadata
 
             )
 
-            st.subheader("AI Explanation")
+            ##################################################
 
-            st.write(explanation)
+            if "error" in result:
+
+                st.error(result["error"])
+
+            else:
+
+                explanation = explain_result(
+
+                    user_question,
+
+                    result
+
+                )
+
+                st.subheader("AI Explanation")
+
+                st.write(explanation)
+except Exception as e:
+    st.exception(e)
