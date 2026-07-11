@@ -25,7 +25,7 @@ It is designed for quick exploratory analysis and supports common relationships 
 - test_selector.py — Rule-based statistical test selection
 - preprocessing/ — Data cleaning and metadata extraction
 - tests/ — Statistical test implementations
-- interpreter.py — Gemini-based explanation layer
+- interpreter.py — Groq-based explanation layer
 
 ## Requirements
 
